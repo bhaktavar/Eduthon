@@ -9,6 +9,7 @@ public class PenScript : MonoBehaviour
     {
 
     }
+    public Material currentMat;
     public GameObject paint;
     
         // Update is called once per frame
@@ -25,6 +26,7 @@ public class PenScript : MonoBehaviour
                 if(hit.collider.tag=="modeldraw")
                 {
                     var blob = Instantiate(paint, new Vector3(hit.point.x, hit.point.y, hit.point.z),transform.rotation);
+                    blob.GetComponent<MeshRenderer>().material = currentMat;
                     blob.transform.parent = GameObject.Find(hit.collider.name).transform;
                      
 
@@ -32,6 +34,7 @@ public class PenScript : MonoBehaviour
                 if(hit.collider.tag=="board")
                 {
                     var blob = Instantiate(paint, new Vector3(hit.point.x, hit.point.y, hit.point.z), transform.rotation);
+                    blob.GetComponent<MeshRenderer>().material = currentMat;
                     blob.transform.parent = GameObject.Find(hit.collider.name).transform;
                   //  blob.tag = "boardpaint";
                 }

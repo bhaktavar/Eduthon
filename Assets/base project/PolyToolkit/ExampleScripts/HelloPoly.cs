@@ -30,6 +30,7 @@ public class HelloPoly : MonoBehaviour {
     public GameObject penobject;
     public GameObject Leantouch;
     public bool boardflag = false;
+    private GameObject curr;
     // ATTENTION: Before running this example, you must set your API key in Poly Toolkit settings.
     //   1. Click "Poly | Poly Toolkit Settings..."
     //      (or select PolyToolkit/Resources/PtSettings.asset in the editor).
@@ -148,7 +149,12 @@ public class HelloPoly : MonoBehaviour {
     // slowly rotate:
    // result.Value.gameObject.AddComponent<Rotate>();
        var object1= result.Value.gameObject.transform.GetChild(0).gameObject.AddComponent<BoxCollider>();
+        if (curr != null)
+        {
+            Destroy(curr);
+        }
          var pz = Instantiate(PrefabZone, result.Value.gameObject.transform);
+        curr = pz;
          object1.transform.parent = pz.transform;
         BoxCollider colli = pz.GetComponent<BoxCollider>();
         newbound = object1.GetComponent<BoxCollider>().bounds;
