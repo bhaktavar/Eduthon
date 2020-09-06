@@ -6,3 +6,5 @@ Google PolyToolKit
 EchoAR
 # Presentation
 https://docs.google.com/presentation/d/1E_rTEaKQWUeBBt89pFFP7DW59wKdF2mUQQEO2EyEpSU/edit?usp=sharing
+# Video demo
+https://youtu.be/y0kpcFP3beE
